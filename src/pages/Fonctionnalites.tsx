@@ -6,7 +6,7 @@ import {
   Database, 
   Settings, 
   CreditCard, 
-  Tree, 
+  Trees, 
   Briefcase, 
   UserCheck,
   GraduationCap,
@@ -105,7 +105,7 @@ const Fonctionnalites = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="glass-morphism rounded-xl p-6 transition-all duration-300">
               <h3 className="text-xl font-bold text-white mb-3 flex items-center">
-                <Tree className="h-5 w-5 mr-2 text-green-400" /> 
+                <Trees className="h-5 w-5 mr-2 text-green-400" /> 
                 Principes régénératifs
               </h3>
               <ul className="space-y-3 text-gray-300">
