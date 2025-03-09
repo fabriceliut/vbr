@@ -1,4 +1,3 @@
-
 import { NavLink } from 'react-router-dom';
 import { ChevronRight, Zap, Users, LineChart, Award, ArrowRight, Rocket, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
