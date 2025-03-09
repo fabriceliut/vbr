@@ -1,209 +1,243 @@
 
-import React from 'react';
-import { z } from 'zod';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { toast } from 'sonner';
-import { SendIcon } from 'lucide-react';
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { toast } from '@/components/ui/use-toast';
+import { 
+  Select, 
+  SelectContent, 
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue 
+} from '@/components/ui/select';
+import { MailCheck } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 
-// Define the form schema
-const contactFormSchema = z.object({
-  name: z.string().min(2, { message: "Le nom doit contenir au moins 2 caractères" }),
-  email: z.string().email({ message: "Veuillez entrer une adresse email valide" }),
-  organization: z.string().min(2, { message: "Le nom de l'organisation est requis" }),
-  organizationType: z.string({
-    required_error: "Veuillez sélectionner le type de votre organisation",
-  }),
-  employeeCount: z.string({
-    required_error: "Veuillez sélectionner le nombre d'employés",
-  }),
-  subject: z.string().min(5, { message: "Le sujet doit contenir au moins 5 caractères" }),
-  message: z.string().min(10, { message: "Le message doit contenir au moins 10 caractères" }),
-});
+// Types d'acteurs possibles
+const actorTypes = [
+  { value: 'startup', label: 'Startup / Entrepreneur' },
+  { value: 'pme-eti', label: 'PME / ETI' },
+  { value: 'investisseur', label: 'Investisseur' },
+  { value: 'recherche', label: 'Acteur de la recherche action' },
+  { value: 'institution', label: 'Institution' },
+  { value: 'accompagnant', label: 'Accompagnant / Facilitateur' },
+  { value: 'autre', label: 'Autre' }
+];
 
-type ContactFormValues = z.infer<typeof contactFormSchema>;
+// Tailles d'organisation
+const organizationSizes = [
+  { value: 'solo', label: 'Entrepreneur individuel' },
+  { value: '1-10', label: '1-10 employés' },
+  { value: '11-50', label: '11-50 employés' },
+  { value: '51-200', label: '51-200 employés' },
+  { value: '201-500', label: '201-500 employés' },
+  { value: '500+', label: 'Plus de 500 employés' }
+];
 
 const Contact = () => {
-  const form = useForm<ContactFormValues>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      organization: "",
-      subject: "",
-      message: "",
-    }
-  });
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [orgName, setOrgName] = useState('');
+  const [orgType, setOrgType] = useState('');
+  const [orgSize, setOrgSize] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const onSubmit = (data: ContactFormValues) => {
-    // In a real application, you would send this data to a backend service
-    console.log(data);
-    
-    // For now, we'll just show a toast notification
-    toast.success("Votre message a été envoyé", {
-      description: "Nous vous contacterons dans les plus brefs délais.",
-    });
-    
-    form.reset();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simulation d'envoi d'email (à remplacer par une vraie implémentation)
+    setTimeout(() => {
+      console.log({
+        name,
+        email,
+        organizationName: orgName,
+        organizationType: orgType,
+        organizationSize: orgSize,
+        subject,
+        message
+      });
+      
+      setIsSubmitting(false);
+      setIsSuccess(true);
+      toast({
+        title: "Message envoyé",
+        description: "Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.",
+      });
+      
+      // Reset form after success
+      setTimeout(() => {
+        setName('');
+        setEmail('');
+        setOrgName('');
+        setOrgType('');
+        setOrgSize('');
+        setSubject('');
+        setMessage('');
+        setIsSuccess(false);
+      }, 3000);
+    }, 1500);
   };
 
   return (
     <div className="min-h-screen">
-      <PageHeader
-        title="Contactez le Venture Builder Régénératif"
-        description="Remplissez le formulaire ci-dessous pour nous contacter et rejoindre l'écosystème du VBR. Nous vous répondrons dans les plus brefs délais."
-      />
-
-      <div className="page-container py-10">
+      <PageHeader title="Contacter le Venture Builder Régénératif" />
+      
+      <div className="page-container section-padding">
         <div className="max-w-3xl mx-auto">
-          <div className="glass-morphism rounded-xl p-8">
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Nom complet</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Jean Dupont" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+          <div className="mb-8 glass-morphism p-6 rounded-xl">
+            <h2 className="text-xl md:text-2xl font-bold mb-4 text-gradient">Rejoignez notre écosystème d'innovation régénérative</h2>
+            <p className="text-gray-300 mb-4">
+              Que vous soyez une startup, une PME, un investisseur, un chercheur ou une institution, 
+              nous sommes impatients d'échanger avec vous sur les possibilités de collaboration au sein 
+              du Venture Builder Régénératif de Lyon.
+            </p>
+            <p className="text-gray-300">
+              Complétez le formulaire ci-dessous en précisant votre profil et vos motivations, 
+              et notre équipe vous contactera rapidement pour approfondir les échanges.
+            </p>
+          </div>
 
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Adresse email</FormLabel>
-                        <FormControl>
-                          <Input placeholder="jean.dupont@exemple.com" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
+          <div className="glass-morphism p-6 rounded-xl">
+            {!isSuccess ? (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="space-y-4">
+                  {/* Coordonnées personnelles */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Nom complet</Label>
+                      <Input
+                        id="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Votre nom"
+                        required
+                        className="bg-white/5 border-white/10 focus:border-white/20"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email professionnel</Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="votre@email.com"
+                        required
+                        className="bg-white/5 border-white/10 focus:border-white/20"
+                      />
+                    </div>
+                  </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <FormField
-                    control={form.control}
-                    name="organization"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Nom de l'organisation</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Nom de votre entreprise/organisation" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="organizationType"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Type d'organisation</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Sélectionnez le type d'organisation" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="startup">Startup</SelectItem>
-                            <SelectItem value="pme">PME/ETI</SelectItem>
-                            <SelectItem value="grand-groupe">Grand groupe</SelectItem>
-                            <SelectItem value="institution">Institution publique</SelectItem>
-                            <SelectItem value="association">Association</SelectItem>
-                            <SelectItem value="investisseur">Investisseur</SelectItem>
-                            <SelectItem value="autre">Autre</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                <FormField
-                  control={form.control}
-                  name="employeeCount"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Taille de l'organisation</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Nombre d'employés" />
-                          </SelectTrigger>
-                        </FormControl>
+                  {/* Informations sur l'organisation */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="orgName">Nom de l'organisation</Label>
+                      <Input
+                        id="orgName"
+                        value={orgName}
+                        onChange={(e) => setOrgName(e.target.value)}
+                        placeholder="Nom de votre organisation"
+                        required
+                        className="bg-white/5 border-white/10 focus:border-white/20"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="orgType">Type d'acteur</Label>
+                      <Select 
+                        value={orgType} 
+                        onValueChange={setOrgType}
+                        required
+                      >
+                        <SelectTrigger className="bg-white/5 border-white/10 focus:border-white/20">
+                          <SelectValue placeholder="Sélectionnez votre profil" />
+                        </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="1-10">1-10 employés</SelectItem>
-                          <SelectItem value="11-50">11-50 employés</SelectItem>
-                          <SelectItem value="51-200">51-200 employés</SelectItem>
-                          <SelectItem value="201-500">201-500 employés</SelectItem>
-                          <SelectItem value="501-1000">501-1000 employés</SelectItem>
-                          <SelectItem value="1000+">Plus de 1000 employés</SelectItem>
+                          <SelectGroup>
+                            {actorTypes.map(type => (
+                              <SelectItem key={type.value} value={type.value}>
+                                {type.label}
+                              </SelectItem>
+                            ))}
+                          </SelectGroup>
                         </SelectContent>
                       </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                    </div>
+                  </div>
 
-                <FormField
-                  control={form.control}
-                  name="subject"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Sujet</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Objet de votre message" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                  <div className="space-y-2">
+                    <Label htmlFor="orgSize">Taille de l'organisation</Label>
+                    <Select 
+                      value={orgSize} 
+                      onValueChange={setOrgSize}
+                      required
+                    >
+                      <SelectTrigger className="bg-white/5 border-white/10 focus:border-white/20">
+                        <SelectValue placeholder="Sélectionnez la taille" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectGroup>
+                          {organizationSizes.map(size => (
+                            <SelectItem key={size.value} value={size.value}>
+                              {size.label}
+                            </SelectItem>
+                          ))}
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+                  </div>
 
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Message</FormLabel>
-                      <FormControl>
-                        <Textarea 
-                          placeholder="Décrivez votre intérêt pour le Venture Builder Régénératif et comment vous aimeriez collaborer..." 
-                          className="min-h-[150px]" 
-                          {...field} 
-                        />
-                      </FormControl>
-                      <FormDescription>
-                        Merci de détailler votre intérêt ou vos questions concernant le Venture Builder Régénératif.
-                      </FormDescription>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <Button type="submit" className="w-full">
-                  <SendIcon className="mr-2 h-4 w-4" /> Envoyer le message
+                  {/* Sujet et message */}
+                  <div className="space-y-2">
+                    <Label htmlFor="subject">Sujet</Label>
+                    <Input
+                      id="subject"
+                      value={subject}
+                      onChange={(e) => setSubject(e.target.value)}
+                      placeholder="Sujet de votre message"
+                      required
+                      className="bg-white/5 border-white/10 focus:border-white/20"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea
+                      id="message"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      placeholder="Précisez votre intérêt pour le VBR et comment vous souhaiteriez collaborer..."
+                      required
+                      className="min-h-32 bg-white/5 border-white/10 focus:border-white/20"
+                    />
+                  </div>
+                </div>
+                <Button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full bg-white text-black hover:bg-white/90 transition-colors"
+                >
+                  {isSubmitting ? "Envoi en cours..." : "Envoyer le message"}
                 </Button>
               </form>
-            </Form>
+            ) : (
+              <div className="py-8 text-center space-y-4">
+                <div className="flex justify-center">
+                  <div className="rounded-full bg-green-500/20 p-3">
+                    <MailCheck className="w-8 h-8 text-green-500" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-medium text-white">Message envoyé !</h3>
+                <p className="text-gray-400">
+                  Merci de nous avoir contactés. Nous vous répondrons dans les plus brefs délais.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
