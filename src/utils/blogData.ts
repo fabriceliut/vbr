@@ -1,5 +1,5 @@
 
-// Temporary mock data for blog posts
+// Données temporaires pour les articles de blog
 export const blogPosts = [
   {
     id: 1,

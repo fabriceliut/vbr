@@ -14,7 +14,7 @@ const BlogPost = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate API delay
+    // Simulation d'un délai API
     const timer = setTimeout(() => {
       const foundPost = getBlogPostBySlug(slug || '');
       setPost(foundPost);
