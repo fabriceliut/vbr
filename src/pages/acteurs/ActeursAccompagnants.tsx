@@ -23,30 +23,35 @@ const ActeursAccompagnants = () => {
       />
       
       <div className="page-container section-padding">
-        <div className="max-w-3xl mx-auto mb-16 glass-morphism p-8 rounded-xl">
-          <Badge variant="outline" className="mb-4 bg-white/5">Réseau d'accompagnement</Badge>
-          <h2 className="text-3xl font-bold text-gradient mb-6">
-            Rejoignez notre communauté d'experts en accompagnement
-          </h2>
-          <p className="text-gray-300 mb-4">
-            Le Venture Builder Régénératif réunit des experts en accompagnement, mentors, coaches et facilitateurs 
-            pour soutenir le développement de projets innovants à impact positif. Votre expertise est précieuse 
-            pour aider les entrepreneurs à surmonter les défis et à maximiser leur impact.
-          </p>
-          <p className="text-gray-300 mb-6">
-            Intégrez un réseau de professionnels partageant les mêmes valeurs et collaborez avec des projets 
-            alignés avec une vision régénérative de l'économie et du développement territorial.
-          </p>
-          
-          <div className="mt-8 flex justify-center">
-            <Button 
-              asChild 
-              className="bg-white text-black hover:bg-white/90 transition-colors"
-            >
-              <NavLink to="/contact">
-                Rejoindre le réseau d'accompagnants
-              </NavLink>
-            </Button>
+        <div className="max-w-3xl mx-auto mb-16 glass-morphism p-8 rounded-xl relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-10 z-0">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2069" alt="Mentors background" className="w-full h-full object-cover" />
+          </div>
+          <div className="relative z-10">
+            <Badge variant="outline" className="mb-4 bg-white/5">Réseau d'accompagnement</Badge>
+            <h2 className="text-3xl font-bold text-gradient mb-6">
+              Rejoignez notre communauté d'experts en accompagnement
+            </h2>
+            <p className="text-gray-300 mb-4">
+              Le Venture Builder Régénératif réunit des experts en accompagnement, mentors, coaches et facilitateurs 
+              pour soutenir le développement de projets innovants à impact positif. Votre expertise est précieuse 
+              pour aider les entrepreneurs à surmonter les défis et à maximiser leur impact.
+            </p>
+            <p className="text-gray-300 mb-6">
+              Intégrez un réseau de professionnels partageant les mêmes valeurs et coopérez avec des projets 
+              alignés avec une vision régénérative de l'économie et du développement territorial.
+            </p>
+            
+            <div className="mt-8 flex justify-center">
+              <Button 
+                asChild 
+                className="bg-white text-black hover:bg-white/90 transition-colors"
+              >
+                <NavLink to="/contact">
+                  Rejoindre le réseau d'accompagnants
+                </NavLink>
+              </Button>
+            </div>
           </div>
         </div>
         
@@ -65,8 +70,8 @@ const ActeursAccompagnants = () => {
               icon={Network}
             />
             <FeaturedCard
-              title="Collaboration fertile"
-              description="Développez des collaborations avec d'autres accompagnants et partenaires du Venture Builder."
+              title="Coopération fertile"
+              description="Développez des coopérations avec d'autres accompagnants et partenaires du Venture Builder."
               icon={Handshake}
             />
             <FeaturedCard
@@ -122,7 +127,7 @@ const ActeursAccompagnants = () => {
                   <span className="text-white font-medium">3</span>
                 </div>
                 <div className="ml-4">
-                  <h4 className="text-lg font-semibold text-white">Formalisation de la collaboration</h4>
+                  <h4 className="text-lg font-semibold text-white">Formalisation de la coopération</h4>
                   <p className="text-gray-400 mt-1">
                     Nous définirons ensemble les modalités de votre contribution au sein du Venture Builder 
                     Régénératif et les projets que vous pourriez accompagner.

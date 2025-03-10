@@ -23,31 +23,36 @@ const ActeursStartup = () => {
       />
       
       <div className="page-container section-padding">
-        <div className="max-w-3xl mx-auto mb-16 glass-morphism p-8 rounded-xl">
-          <Badge variant="outline" className="mb-4 bg-white/5">Rejoignez l'écosystème</Badge>
-          <h2 className="text-3xl font-bold text-gradient mb-6">
-            Accélérez votre startup dans un écosystème orienté impact
-          </h2>
-          <p className="text-gray-300 mb-4">
-            Le Venture Builder Régénératif propose aux startups et entrepreneurs un environnement unique 
-            alliant innovations technologiques, expertise sectorielle et approche régénérative. 
-            Bénéficiez de ressources mutualisées et d'un accompagnement personnalisé pour développer 
-            des solutions à fort impact positif sur le territoire.
-          </p>
-          <p className="text-gray-300 mb-6">
-            Notre approche va au-delà de l'incubation traditionnelle en intégrant votre projet dans 
-            un écosystème complet d'acteurs complémentaires orientés vers la création de valeur durable.
-          </p>
-          
-          <div className="mt-8 flex justify-center">
-            <Button 
-              asChild 
-              className="bg-white text-black hover:bg-white/90 transition-colors"
-            >
-              <NavLink to="/contact">
-                Rejoindre le Venture Builder Régénératif
-              </NavLink>
-            </Button>
+        <div className="max-w-3xl mx-auto mb-16 glass-morphism p-8 rounded-xl relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-10 z-0">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2069" alt="Startup background" className="w-full h-full object-cover" />
+          </div>
+          <div className="relative z-10">
+            <Badge variant="outline" className="mb-4 bg-white/5">Rejoignez l'écosystème</Badge>
+            <h2 className="text-3xl font-bold text-gradient mb-6">
+              Accélérez votre startup dans un écosystème orienté impact
+            </h2>
+            <p className="text-gray-300 mb-4">
+              Le Venture Builder Régénératif propose aux startups et entrepreneurs un environnement unique 
+              alliant innovations technologiques, expertise sectorielle et approche régénérative. 
+              Bénéficiez de ressources mutualisées et d'un accompagnement personnalisé pour développer 
+              des solutions à fort impact positif sur le territoire.
+            </p>
+            <p className="text-gray-300 mb-6">
+              Notre approche va au-delà de l'incubation traditionnelle en intégrant votre projet dans 
+              un écosystème complet d'acteurs complémentaires orientés vers la création de valeur durable.
+            </p>
+            
+            <div className="mt-8 flex justify-center">
+              <Button 
+                asChild 
+                className="bg-white text-black hover:bg-white/90 transition-colors"
+              >
+                <NavLink to="/contact">
+                  Rejoindre le Venture Builder Régénératif
+                </NavLink>
+              </Button>
+            </div>
           </div>
         </div>
         
@@ -77,7 +82,7 @@ const ActeursStartup = () => {
             />
             <FeaturedCard
               title="Communauté d'entraide"
-              description="Rejoignez une communauté d'entrepreneurs partageant les mêmes valeurs pour échanger des idées et collaborer."
+              description="Rejoignez une communauté d'entrepreneurs partageant les mêmes valeurs pour échanger des idées et coopérer."
               icon={Users}
             />
             <FeaturedCard

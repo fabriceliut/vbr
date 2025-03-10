@@ -29,16 +29,16 @@ export const blogPosts = [
       
       <h3 class="text-xl font-bold my-4">Un écosystème d'acteurs complémentaires</h3>
       
-      <p class="mb-4">Le VBR réunit des entrepreneurs, des PME, des investisseurs, des chercheurs, des institutions publiques et des accompagnants au sein d'un écosystème collaboratif. Cette diversité d'acteurs permet de mobiliser des compétences et des ressources complémentaires pour développer des solutions innovantes.</p>
+      <p class="mb-4">Le VBR réunit des entrepreneurs, des PME, des investisseurs, des chercheurs, des institutions publiques et des accompagnants au sein d'un écosystème coopératif. Cette diversité d'acteurs permet de mobiliser des compétences et des ressources complémentaires pour développer des solutions innovantes.</p>
       
       <p class="mb-4">Les premiers projets accompagnés seront annoncés dans les prochaines semaines, avec un focus particulier sur les secteurs de l'agroécologie, de l'économie circulaire et des énergies renouvelables.</p>
       
       <h3 class="text-xl font-bold my-4">Rejoindre l'aventure</h3>
       
-      <p class="mb-4">Si vous souhaitez contribuer à cette dynamique d'innovation régénérative, n'hésitez pas à nous contacter pour explorer les possibilités de collaboration.</p>
+      <p class="mb-4">Si vous souhaitez contribuer à cette dynamique d'innovation régénérative, n'hésitez pas à nous contacter pour explorer les possibilités de coopération.</p>
     `,
     excerpt: "Le Venture Builder Régénératif a officiellement été lancé aujourd'hui lors d'un événement regroupant des acteurs clés de l'écosystème d'innovation territorial.",
-    imageUrl: '/placeholder.svg',
+    imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2069',
     tags: ['Lancement', 'Innovation', 'Régénératif']
   },
   {
@@ -94,7 +94,7 @@ export const blogPosts = [
       <p class="mb-4">Pour candidater, rendez-vous sur notre formulaire en ligne ou contactez-nous directement pour plus d'informations.</p>
     `,
     excerpt: "Le Venture Builder Régénératif lance aujourd'hui son premier appel à candidatures pour recruter des startups et projets innovants à fort potentiel d'impact positif.",
-    imageUrl: '/placeholder.svg',
+    imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2069',
     tags: ['Startups', 'Recrutement', 'Innovation']
   }
 ];

@@ -19,34 +19,39 @@ const ActeursRecherche = () => {
     <div className="min-h-screen">
       <PageHeader 
         title="Acteurs de la Recherche-Action" 
-        subtitle="Collaborez avec des projets innovants et développez des solutions basées sur la recherche appliquée"
+        subtitle="Coopérez avec des projets innovants et développez des solutions basées sur la recherche appliquée"
       />
       
       <div className="page-container section-padding">
-        <div className="max-w-3xl mx-auto mb-16 glass-morphism p-8 rounded-xl">
-          <Badge variant="outline" className="mb-4 bg-white/5">Collaboration recherche-entreprise</Badge>
-          <h2 className="text-3xl font-bold text-gradient mb-6">
-            Transformez vos recherches en solutions concrètes à impact
-          </h2>
-          <p className="text-gray-300 mb-4">
-            Le Venture Builder Régénératif offre aux chercheurs et équipes de recherche un environnement unique 
-            pour transformer les recherches académiques en solutions concrètes. Collaborez avec des entrepreneurs, 
-            des startups et des PME pour développer des applications pratiques de vos travaux.
-          </p>
-          <p className="text-gray-300 mb-6">
-            Notre écosystème favorise le transfert de technologies et de connaissances entre le monde académique 
-            et le monde entrepreneurial, dans une approche orientée vers l'impact positif.
-          </p>
-          
-          <div className="mt-8 flex justify-center">
-            <Button 
-              asChild 
-              className="bg-white text-black hover:bg-white/90 transition-colors"
-            >
-              <NavLink to="/contact">
-                Collaborer avec le Venture Builder Régénératif
-              </NavLink>
-            </Button>
+        <div className="max-w-3xl mx-auto mb-16 glass-morphism p-8 rounded-xl relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-10 z-0">
+            <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=2069" alt="Recherche background" className="w-full h-full object-cover" />
+          </div>
+          <div className="relative z-10">
+            <Badge variant="outline" className="mb-4 bg-white/5">Coopération recherche-entreprise</Badge>
+            <h2 className="text-3xl font-bold text-gradient mb-6">
+              Transformez vos recherches en solutions concrètes à impact
+            </h2>
+            <p className="text-gray-300 mb-4">
+              Le Venture Builder Régénératif offre aux chercheurs et équipes de recherche un environnement unique 
+              pour transformer les recherches académiques en solutions concrètes. Coopérez avec des entrepreneurs, 
+              des startups et des PME pour développer des applications pratiques de vos travaux.
+            </p>
+            <p className="text-gray-300 mb-6">
+              Notre écosystème favorise le transfert de technologies et de connaissances entre le monde académique 
+              et le monde entrepreneurial, dans une approche orientée vers l'impact positif.
+            </p>
+            
+            <div className="mt-8 flex justify-center">
+              <Button 
+                asChild 
+                className="bg-white text-black hover:bg-white/90 transition-colors"
+              >
+                <NavLink to="/contact">
+                  Coopérer avec le Venture Builder Régénératif
+                </NavLink>
+              </Button>
+            </div>
           </div>
         </div>
         
@@ -88,7 +93,7 @@ const ActeursRecherche = () => {
         </div>
         
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8 text-gradient">Comment collaborer avec le VBR ?</h3>
+          <h3 className="text-2xl font-bold text-center mb-8 text-gradient">Comment coopérer avec le VBR ?</h3>
           
           <div className="max-w-3xl mx-auto glass-morphism p-6 rounded-xl">
             <div className="space-y-6">
@@ -99,7 +104,7 @@ const ActeursRecherche = () => {
                 <div className="ml-4">
                   <h4 className="text-lg font-semibold text-white">Présentez votre recherche</h4>
                   <p className="text-gray-400 mt-1">
-                    Contactez-nous pour présenter vos domaines de recherche et explorer les possibilités de collaboration.
+                    Contactez-nous pour présenter vos domaines de recherche et explorer les possibilités de coopération.
                   </p>
                 </div>
               </div>
@@ -124,7 +129,7 @@ const ActeursRecherche = () => {
                 <div className="ml-4">
                   <h4 className="text-lg font-semibold text-white">Définition du projet</h4>
                   <p className="text-gray-400 mt-1">
-                    Ensemble, nous définirons un projet de collaboration concret, avec des objectifs 
+                    Ensemble, nous définirons un projet de coopération concret, avec des objectifs 
                     et des étapes clairement définis.
                   </p>
                 </div>
@@ -150,7 +155,7 @@ const ActeursRecherche = () => {
                 className="glass-morphism hover:bg-white/10"
               >
                 <NavLink to="/contact">
-                  Démarrer une collaboration <ArrowRight className="ml-2 h-4 w-4" />
+                  Démarrer une coopération <ArrowRight className="ml-2 h-4 w-4" />
                 </NavLink>
               </Button>
             </div>
@@ -161,7 +166,7 @@ const ActeursRecherche = () => {
           <h3 className="text-2xl font-bold mb-6 text-gradient">Envie de transformer votre recherche en impact concret ?</h3>
           <p className="text-gray-300 max-w-xl mx-auto mb-8">
             Contactez-nous dès aujourd'hui pour discuter de vos travaux de recherche et explorer 
-            les possibilités de collaboration au sein du Venture Builder Régénératif.
+            les possibilités de coopération au sein du Venture Builder Régénératif.
           </p>
           <Button 
             asChild 

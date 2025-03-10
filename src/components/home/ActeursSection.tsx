@@ -20,7 +20,10 @@ const ActeursSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="glass-morphism rounded-xl p-6 transition-all duration-300 hover-lift">
+          <div className="glass-morphism rounded-xl p-6 transition-all duration-300 hover-lift overflow-hidden">
+            <div className="h-40 rounded-lg mb-4 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2069" alt="Startups et entrepreneurs" className="w-full h-full object-cover" />
+            </div>
             <h3 className="text-xl font-bold text-white mb-3">Startups & Entrepreneurs</h3>
             <p className="text-gray-400 mb-4">
               Intégrez un environnement propice au développement de projets innovants à impact positif.
@@ -33,7 +36,10 @@ const ActeursSection = () => {
             </NavLink>
           </div>
 
-          <div className="glass-morphism rounded-xl p-6 transition-all duration-300 hover-lift">
+          <div className="glass-morphism rounded-xl p-6 transition-all duration-300 hover-lift overflow-hidden">
+            <div className="h-40 rounded-lg mb-4 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2069" alt="PME et ETI" className="w-full h-full object-cover" />
+            </div>
             <h3 className="text-xl font-bold text-white mb-3">PME & ETI</h3>
             <p className="text-gray-400 mb-4">
               Accélérez votre transition vers des modèles d'affaires plus durables et innovants.
@@ -46,7 +52,10 @@ const ActeursSection = () => {
             </NavLink>
           </div>
 
-          <div className="glass-morphism rounded-xl p-6 transition-all duration-300 hover-lift">
+          <div className="glass-morphism rounded-xl p-6 transition-all duration-300 hover-lift overflow-hidden">
+            <div className="h-40 rounded-lg mb-4 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1639763402885-2c8f9e35a2d1?q=80&w=2069" alt="Investisseurs" className="w-full h-full object-cover" />
+            </div>
             <h3 className="text-xl font-bold text-white mb-3">Investisseurs</h3>
             <p className="text-gray-400 mb-4">
               Participez à des investissements à impact positif avec des retours financiers attractifs.
@@ -59,20 +68,26 @@ const ActeursSection = () => {
             </NavLink>
           </div>
 
-          <div className="glass-morphism rounded-xl p-6 transition-all duration-300 hover-lift">
-            <h3 className="text-xl font-bold text-white mb-3">Talents</h3>
+          <div className="glass-morphism rounded-xl p-6 transition-all duration-300 hover-lift overflow-hidden">
+            <div className="h-40 rounded-lg mb-4 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=2069" alt="Acteurs de la recherche" className="w-full h-full object-cover" />
+            </div>
+            <h3 className="text-xl font-bold text-white mb-3">Acteurs de la Recherche</h3>
             <p className="text-gray-400 mb-4">
               Mettez vos compétences au service de projets porteurs de sens et d'impact.
             </p>
             <NavLink 
-              to="/acteurs/talents" 
+              to="/acteurs/recherche" 
               className="flex items-center text-blue-400 hover:text-blue-300 text-sm font-medium"
             >
               En savoir plus <ChevronRight className="w-4 h-4 ml-1" />
             </NavLink>
           </div>
 
-          <div className="glass-morphism rounded-xl p-6 transition-all duration-300 hover-lift">
+          <div className="glass-morphism rounded-xl p-6 transition-all duration-300 hover-lift overflow-hidden">
+            <div className="h-40 rounded-lg mb-4 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1577415124269-fc1140a69e91?q=80&w=2069" alt="Institutions" className="w-full h-full object-cover" />
+            </div>
             <h3 className="text-xl font-bold text-white mb-3">Institutions</h3>
             <p className="text-gray-400 mb-4">
               Soutenez une initiative structurante pour le développement durable du territoire.
@@ -85,7 +100,10 @@ const ActeursSection = () => {
             </NavLink>
           </div>
 
-          <div className="glass-morphism rounded-xl p-6 transition-all duration-300 hover-lift">
+          <div className="glass-morphism rounded-xl p-6 transition-all duration-300 hover-lift overflow-hidden">
+            <div className="h-40 rounded-lg mb-4 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2069" alt="Mentors et experts" className="w-full h-full object-cover" />
+            </div>
             <h3 className="text-xl font-bold text-white mb-3">Mentors & Experts</h3>
             <p className="text-gray-400 mb-4">
               Partagez votre expertise pour accompagner des projets innovants à visée régénérative.
