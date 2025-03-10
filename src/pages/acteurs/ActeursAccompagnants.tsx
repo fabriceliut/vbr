@@ -25,7 +25,12 @@ const ActeursAccompagnants = () => {
       <div className="page-container section-padding">
         <div className="max-w-3xl mx-auto mb-16 glass-morphism p-8 rounded-xl relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full opacity-10 z-0">
-            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2069" alt="Mentors background" className="w-full h-full object-cover" />
+            <img 
+              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2069" 
+              alt="Mentors background" 
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
           <div className="relative z-10">
             <Badge variant="outline" className="mb-4 bg-white/5">Réseau d'accompagnement</Badge>

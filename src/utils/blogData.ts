@@ -96,6 +96,54 @@ export const blogPosts = [
     excerpt: "Le Venture Builder Régénératif lance aujourd'hui son premier appel à candidatures pour recruter des startups et projets innovants à fort potentiel d'impact positif.",
     imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2069',
     tags: ['Startups', 'Recrutement', 'Innovation']
+  },
+  {
+    id: 3,
+    slug: 'coopération-territoriale',
+    title: 'Coopération territoriale : un nouveau modèle économique',
+    author: {
+      name: 'Thomas Laurent',
+      avatar: '/placeholder.svg'
+    },
+    date: '2023-11-05',
+    content: `
+      <p class="mb-4">Le Venture Builder Régénératif développe une approche unique de coopération territoriale pour répondre aux enjeux du 21ème siècle.</p>
+      
+      <p class="mb-4">Face aux défis multiples que nous rencontrons, la coopération entre acteurs économiques, institutionnels et académiques devient une nécessité stratégique pour développer des solutions à la hauteur des enjeux.</p>
+      
+      <h3 class="text-xl font-bold my-4">Au-delà de la simple collaboration</h3>
+      
+      <p class="mb-4">La coopération territoriale que nous développons va au-delà de la simple collaboration ponctuelle. Elle implique un engagement dans la durée, un partage de ressources et une vision commune du territoire que nous souhaitons construire.</p>
+      
+      <p class="mb-4">Cette approche repose sur plusieurs principes :</p>
+      
+      <ul class="list-disc pl-6 mb-4 space-y-2">
+        <li>La reconnaissance des interdépendances entre acteurs</li>
+        <li>La complémentarité des compétences et des ressources</li>
+        <li>L'engagement dans des processus d'innovation ouverte</li>
+        <li>Le partage équitable de la valeur créée</li>
+        <li>L'orientation vers l'impact positif</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold my-4">Des exemples concrets</h3>
+      
+      <p class="mb-4">Plusieurs initiatives sont déjà en cours de développement :</p>
+      
+      <ul class="list-disc pl-6 mb-4 space-y-2">
+        <li>Un programme de coopération entre PME et startups pour développer des solutions d'économie circulaire</li>
+        <li>Une plateforme d'innovation ouverte impliquant des chercheurs, des collectivités et des entreprises</li>
+        <li>Un fonds d'investissement territorial orienté vers les projets à impact</li>
+      </ul>
+      
+      <p class="mb-4">Ces initiatives démontrent la pertinence et l'efficacité de notre approche pour créer de la valeur économique tout en régénérant les écosystèmes naturels et sociaux.</p>
+      
+      <h3 class="text-xl font-bold my-4">Rejoindre la dynamique</h3>
+      
+      <p class="mb-4">Si votre organisation souhaite s'engager dans cette dynamique de coopération territoriale, contactez-nous pour explorer ensemble les possibilités de coopération.</p>
+    `,
+    excerpt: "Le Venture Builder Régénératif développe une approche unique de coopération territoriale pour répondre aux enjeux économiques, sociaux et environnementaux du 21ème siècle.",
+    imageUrl: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070',
+    tags: ['Coopération', 'Territoire', 'Innovation']
   }
 ];
 

@@ -18,14 +18,19 @@ const ActeursRecherche = () => {
   return (
     <div className="min-h-screen">
       <PageHeader 
-        title="Acteurs de la Recherche-Action" 
-        subtitle="Coopérez avec des projets innovants et développez des solutions basées sur la recherche appliquée"
+        title="Acteurs de la Recherche" 
+        subtitle="Transformez vos travaux de recherche en solutions concrètes à impact positif grâce à notre écosystème d'innovation"
       />
       
       <div className="page-container section-padding">
         <div className="max-w-3xl mx-auto mb-16 glass-morphism p-8 rounded-xl relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full opacity-10 z-0">
-            <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=2069" alt="Recherche background" className="w-full h-full object-cover" />
+            <img 
+              src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=2069" 
+              alt="Recherche background" 
+              className="w-full h-full object-cover" 
+              loading="lazy"
+            />
           </div>
           <div className="relative z-10">
             <Badge variant="outline" className="mb-4 bg-white/5">Coopération recherche-entreprise</Badge>
@@ -34,12 +39,12 @@ const ActeursRecherche = () => {
             </h2>
             <p className="text-gray-300 mb-4">
               Le Venture Builder Régénératif offre aux chercheurs et équipes de recherche un environnement unique 
-              pour transformer les recherches académiques en solutions concrètes. Coopérez avec des entrepreneurs, 
-              des startups et des PME pour développer des applications pratiques de vos travaux.
+              pour transformer les travaux académiques en solutions concrètes. Coopérez avec des entrepreneurs, 
+              des startups et des PME pour développer des applications pratiques de vos recherches.
             </p>
             <p className="text-gray-300 mb-6">
               Notre écosystème favorise le transfert de technologies et de connaissances entre le monde académique 
-              et le monde entrepreneurial, dans une approche orientée vers l'impact positif.
+              et le monde entrepreneurial, dans une approche orientée vers l'impact positif et régénératif.
             </p>
             
             <div className="mt-8 flex justify-center">

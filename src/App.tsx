@@ -19,7 +19,14 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import UpvoteProjects from "./pages/UpvoteProjects";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 1,
+    },
+  },
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>

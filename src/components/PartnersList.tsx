@@ -35,7 +35,7 @@ const PartnersList = ({ title = "Nos partenaires", subtitle, partners }: Partner
         </div>
       )}
 
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         {confirmedPartners.map((partner) => (
           <div
             key={partner.id}
@@ -52,6 +52,7 @@ const PartnersList = ({ title = "Nos partenaires", subtitle, partners }: Partner
                     src={partner.logo} 
                     alt={partner.name}
                     className="w-12 h-12 object-contain opacity-80 group-hover:opacity-100 transition-opacity" 
+                    loading="lazy"
                   />
                 </div>
               ) : (
@@ -84,53 +85,61 @@ const PartnersList = ({ title = "Nos partenaires", subtitle, partners }: Partner
           </div>
         ))}
 
-        {pendingPartners.length > 0 && pendingPartners.map((partner) => (
-          <div
-            key={partner.id}
-            className={cn(
-              "glass-morphism p-4 rounded-lg text-center transition-all duration-300 cursor-pointer hover-lift group",
-              activePartner === partner.id && "ring-1 ring-white/20"
-            )}
-            onClick={() => setActivePartner(activePartner === partner.id ? null : partner.id)}
-          >
-            <div className="flex flex-col items-center h-full">
-              {partner.logo ? (
-                <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-3">
-                  <img 
-                    src={partner.logo} 
-                    alt={partner.name}
-                    className="w-12 h-12 object-contain opacity-50 group-hover:opacity-70 transition-opacity" 
-                  />
-                </div>
-              ) : (
-                <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-3">
-                  <span className="text-lg font-bold text-white/50">{partner.name.substring(0, 2)}</span>
-                </div>
-              )}
-              <h4 className="text-sm font-medium text-white/80 mb-1">{partner.name}</h4>
-              <Badge variant="outline" className="bg-yellow-500/10 text-yellow-400 border-yellow-500/20 text-xs">
-                En cours de validation
-              </Badge>
-              
-              <div className={cn(
-                "mt-3 text-xs text-gray-400 leading-relaxed overflow-hidden transition-all duration-300",
-                activePartner === partner.id ? "max-h-36" : "max-h-0"
-              )}>
-                <p>{partner.description}</p>
-                {partner.url && (
-                  <a 
-                    href={partner.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-block mt-2 text-blue-400 hover:text-blue-300 transition-colors text-xs"
-                  >
-                    Visiter le site
-                  </a>
-                )}
-              </div>
+        {pendingPartners.length > 0 && (
+          <>
+            <div className="col-span-2 md:col-span-3 lg:col-span-5 mt-6 mb-2">
+              <h4 className="text-lg font-medium text-white/80">Partenaires en cours de validation</h4>
             </div>
-          </div>
-        ))}
+            {pendingPartners.map((partner) => (
+              <div
+                key={partner.id}
+                className={cn(
+                  "glass-morphism p-4 rounded-lg text-center transition-all duration-300 cursor-pointer hover-lift group",
+                  activePartner === partner.id && "ring-1 ring-white/20"
+                )}
+                onClick={() => setActivePartner(activePartner === partner.id ? null : partner.id)}
+              >
+                <div className="flex flex-col items-center h-full">
+                  {partner.logo ? (
+                    <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-3">
+                      <img 
+                        src={partner.logo} 
+                        alt={partner.name}
+                        className="w-12 h-12 object-contain opacity-50 group-hover:opacity-70 transition-opacity" 
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-3">
+                      <span className="text-lg font-bold text-white/50">{partner.name.substring(0, 2)}</span>
+                    </div>
+                  )}
+                  <h4 className="text-sm font-medium text-white/80 mb-1">{partner.name}</h4>
+                  <Badge variant="outline" className="bg-yellow-500/10 text-yellow-400 border-yellow-500/20 text-xs">
+                    En cours de validation
+                  </Badge>
+                  
+                  <div className={cn(
+                    "mt-3 text-xs text-gray-400 leading-relaxed overflow-hidden transition-all duration-300",
+                    activePartner === partner.id ? "max-h-36" : "max-h-0"
+                  )}>
+                    <p>{partner.description}</p>
+                    {partner.url && (
+                      <a 
+                        href={partner.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-block mt-2 text-blue-400 hover:text-blue-300 transition-colors text-xs"
+                      >
+                        Visiter le site
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </>
+        )}
       </div>
     </div>
   );
