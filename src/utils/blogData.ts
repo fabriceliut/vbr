@@ -37,7 +37,7 @@ export const blogPosts = [
       
       <p class="mb-4">Si vous souhaitez contribuer à cette dynamique d'innovation régénérative, n'hésitez pas à nous contacter pour explorer les possibilités de collaboration.</p>
     `,
-    excerpt: 'Le Venture Builder Régénératif a officiellement été lancé aujourd'hui lors d'un événement regroupant des acteurs clés de l'écosystème d'innovation territorial.',
+    excerpt: "Le Venture Builder Régénératif a officiellement été lancé aujourd'hui lors d'un événement regroupant des acteurs clés de l'écosystème d'innovation territorial.",
     imageUrl: '/placeholder.svg',
     tags: ['Lancement', 'Innovation', 'Régénératif']
   },
@@ -93,7 +93,7 @@ export const blogPosts = [
       
       <p class="mb-4">Pour candidater, rendez-vous sur notre formulaire en ligne ou contactez-nous directement pour plus d'informations.</p>
     `,
-    excerpt: 'Le Venture Builder Régénératif lance aujourd'hui son premier appel à candidatures pour recruter des startups et projets innovants à fort potentiel d'impact positif.',
+    excerpt: "Le Venture Builder Régénératif lance aujourd'hui son premier appel à candidatures pour recruter des startups et projets innovants à fort potentiel d'impact positif.",
     imageUrl: '/placeholder.svg',
     tags: ['Startups', 'Recrutement', 'Innovation']
   }
