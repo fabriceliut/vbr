@@ -29,7 +29,7 @@ const queryClient = new QueryClient({
 });
 
 // Determine the basename for the router based on GitHub Pages deployment
-const basename = process.env.NODE_ENV === 'production' ? './' : '/';
+const basename = "/vbr"; // Changed to match the GitHub Pages repository name
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
