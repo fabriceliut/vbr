@@ -89,6 +89,48 @@
     @apply bg-gradient-to-br from-blue-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent;
   }
 
+  /* Nouveaux styles pour des dégradés similaires à lovable.dev */
+  .text-gradient-purple {
+    @apply bg-gradient-to-r from-brand-purple to-brand-pink bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-blue {
+    @apply bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-green {
+    @apply bg-gradient-to-r from-brand-green to-brand-blue bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-amber {
+    @apply bg-gradient-to-r from-brand-amber to-brand-red bg-clip-text text-transparent;
+  }
+
+  /* Effets de survol améliorés */
+  .hover-card {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-white/5 hover:-translate-y-1;
+  }
+  
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)];
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  .animate-float {
+    @apply animate-float;
+  }
+  
+  .animate-glow {
+    @apply animate-glow;
+  }
+
   .page-container {
     @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
@@ -97,7 +139,24 @@
     @apply py-12 md:py-24;
   }
 
-  .hover-lift {
-    @apply transition-transform duration-300 hover:-translate-y-1;
+  /* Nouveaux styles pour les boutons et cartes */
+  .btn-gradient-purple {
+    @apply bg-purple-gradient text-white hover:opacity-90 transition-opacity;
+  }
+  
+  .btn-gradient-blue {
+    @apply bg-blue-gradient text-white hover:opacity-90 transition-opacity;
+  }
+  
+  .btn-gradient-green {
+    @apply bg-green-gradient text-white hover:opacity-90 transition-opacity;
+  }
+  
+  .btn-gradient-amber {
+    @apply bg-amber-gradient text-white hover:opacity-90 transition-opacity;
+  }
+  
+  .card-gradient {
+    @apply bg-gradient-to-br from-white/5 to-white/10 hover:from-white/10 hover:to-white/15 transition-all duration-300;
   }
 }

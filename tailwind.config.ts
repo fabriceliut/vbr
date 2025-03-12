@@ -66,6 +66,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Nouvelles couleurs dans le style lovable.dev
+				brand: {
+					purple: '#8B5CF6',
+					blue: '#0EA5E9',
+					pink: '#D946EF',
+					teal: '#0D9488',
+					amber: '#F59E0B',
+					green: '#10B981',
+					red: '#F43F5E'
 				}
 			},
 			borderRadius: {
@@ -105,6 +115,15 @@ export default {
 				pulse: {
 					'0%, 100%': { opacity: '1' },
 					'50%': { opacity: '0.5' }
+				},
+				// Animations plus vives pour les effets de survol
+				glow: {
+					'0%, 100%': { opacity: '1', filter: 'brightness(1)' },
+					'50%': { opacity: '0.8', filter: 'brightness(1.2)' }
+				},
+				float: {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-5px)' }
 				}
 			},
 			animation: {
@@ -113,7 +132,17 @@ export default {
 				'fade-in': 'fadeIn 0.5s ease-out',
 				'slide-up': 'slideUp 0.5s ease-out',
 				'slide-down': 'slideDown 0.5s ease-out',
-				'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+				'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'glow': 'glow 2s ease-in-out infinite',
+				'float': 'float 3s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-linear': 'linear-gradient(var(--tw-gradient-angle), var(--tw-gradient-stops))',
+				'purple-gradient': 'linear-gradient(90deg, #8B5CF6 0%, #D946EF 100%)',
+				'blue-gradient': 'linear-gradient(90deg, #0EA5E9 0%, #8B5CF6 100%)',
+				'green-gradient': 'linear-gradient(90deg, #10B981 0%, #0EA5E9 100%)',
+				'amber-gradient': 'linear-gradient(90deg, #F59E0B 0%, #F43F5E 100%)'
 			}
 		}
 	},
