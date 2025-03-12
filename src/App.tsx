@@ -28,12 +28,15 @@ const queryClient = new QueryClient({
   },
 });
 
+// Determine the basename for the router based on GitHub Pages deployment
+const basename = process.env.NODE_ENV === 'production' ? './' : '/';
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/fonctionnalites" element={<Fonctionnalites />} />
