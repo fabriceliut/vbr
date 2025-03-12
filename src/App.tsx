@@ -28,8 +28,8 @@ const queryClient = new QueryClient({
   },
 });
 
-// Determine the basename for the router based on GitHub Pages deployment
-const basename = "/vbr"; // Changed to match the GitHub Pages repository name
+// Basename for GitHub Pages deployment
+const basename = "/vbr";
 
 const App = () => (
   <QueryClientProvider client={queryClient}>

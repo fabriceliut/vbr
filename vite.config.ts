@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: "/vbr/", // Changed to match the GitHub Pages repository name
+  base: "/vbr/", // Set to match the GitHub Pages repository name
   plugins: [
     react(),
     mode === 'development' &&
